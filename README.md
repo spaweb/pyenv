@@ -29,7 +29,7 @@ This project was forked from [rbenv](https://github.com/rbenv/rbenv) and
 * **Need to be loaded into your shell.** Instead, pyenv's shim
     approach works by adding a directory to your `$PATH`.
 * **Manage virtualenv.** Of course, you can create [virtualenv](https://pypi.python.org/pypi/virtualenv)
-    yourself, or [pyenv-virtualenv](https://github.com/pyenv/pyenv-virtualenv)
+    yourself, or [pyenv-virtualenv](https://github.com/spaweb/pyenv-virtualenv)
     to automate the process.
 
 
@@ -110,19 +110,19 @@ When you execute a shim, pyenv determines which Python version to use by
 reading it from the following sources, in this order:
 
 1. The `PYENV_VERSION` environment variable (if specified). You can use
-   the [`pyenv shell`](https://github.com/pyenv/pyenv/blob/master/COMMANDS.md#pyenv-shell) command to set this environment
+   the [`pyenv shell`](https://github.com/spaweb/pyenv/blob/master/COMMANDS.md#pyenv-shell) command to set this environment
    variable in your current shell session.
 
 2. The application-specific `.python-version` file in the current
    directory (if present). You can modify the current directory's
-   `.python-version` file with the [`pyenv local`](https://github.com/pyenv/pyenv/blob/master/COMMANDS.md#pyenv-local)
+   `.python-version` file with the [`pyenv local`](https://github.com/spaweb/pyenv/blob/master/COMMANDS.md#pyenv-local)
    command.
 
 3. The first `.python-version` file found (if any) by searching each parent
    directory, until reaching the root of your filesystem.
 
 4. The global `$(pyenv root)/version` file. You can modify this file using
-   the [`pyenv global`](https://github.com/pyenv/pyenv/blob/master/COMMANDS.md#pyenv-global) command. If the global version
+   the [`pyenv global`](https://github.com/spaweb/pyenv/blob/master/COMMANDS.md#pyenv-global) command. If the global version
    file is not present, pyenv assumes you want to use the "system"
    Python. (In other words, whatever version would run if pyenv weren't in your
    `PATH`.)
@@ -160,7 +160,7 @@ As far as Pyenv is concerned, version names are simply directories under
 
 ### Managing Virtual Environments
 
-There is a pyenv plugin named [pyenv-virtualenv](https://github.com/pyenv/pyenv-virtualenv) which comes with various features to help pyenv users to manage virtual environments created by virtualenv or Anaconda.
+There is a pyenv plugin named [pyenv-virtualenv](https://github.com/spaweb/pyenv-virtualenv) which comes with various features to help pyenv users to manage virtual environments created by virtualenv or Anaconda.
 Because the `activate` script of those virtual environments are relying on mutating `$PATH` variable of user's interactive shell, it will intercept pyenv's shim style command execution hooks.
 We'd recommend to install pyenv-virtualenv as well if you have some plan to play with those virtual environments.
 
@@ -172,7 +172,7 @@ We'd recommend to install pyenv-virtualenv as well if you have some plan to play
 
 ### Prerequisites
 
-For pyenv to install python correctly you should [**install the Python build dependencies**](https://github.com/pyenv/pyenv/wiki#suggested-build-environment).
+For pyenv to install python correctly you should [**install the Python build dependencies**](https://github.com/spaweb/pyenv/wiki#suggested-build-environment).
 
 ### Homebrew in macOS
 
@@ -181,7 +181,7 @@ For pyenv to install python correctly you should [**install the Python build dep
       brew update
       brew install pyenv
       ```
-   2. Then follow the rest of the post-installation steps under [Basic GitHub Checkout](https://github.com/pyenv/pyenv#basic-github-checkout), starting with #2 ("Configure your shell's environment for Pyenv").
+   2. Then follow the rest of the post-installation steps under [Basic GitHub Checkout](https://github.com/spaweb/pyenv#basic-github-checkout), starting with #2 ("Configure your shell's environment for Pyenv").
 
    3. OPTIONAL. To fix `brew doctor`'s warning _""config" scripts exist outside your system or Homebrew directories"_
    
@@ -221,7 +221,7 @@ which does install native Windows Python versions.
 ### Automatic installer
 
 Visit our other project:
-https://github.com/pyenv/pyenv-installer
+https://github.com/spaweb/pyenv-installer
 
 
 ### Basic GitHub Checkout
@@ -232,7 +232,7 @@ easy to fork and contribute any changes back upstream.
 1. **Check out Pyenv where you want it installed.**
    A good place to choose is `$HOME/.pyenv` (but you can install it somewhere else):
 
-        git clone https://github.com/pyenv/pyenv.git ~/.pyenv
+        git clone https://github.com/spaweb/pyenv.git ~/.pyenv
 
    Optionally, try to compile a dynamic Bash extension to speed up Pyenv. Don't
    worry if it fails; Pyenv will still work normally:
@@ -339,7 +339,7 @@ easy to fork and contribute any changes back upstream.
       to point to `.bashrc`. On such systems, you should almost certainly put the
       `eval "$(pyenv init -)"` line into `.bash_profile`, and **not** into `.bashrc`. Otherwise, you
       may observe strange behaviour, such as `pyenv` getting into an infinite loop.
-      See [#264](https://github.com/pyenv/pyenv/issues/264) for details.
+      See [#264](https://github.com/spaweb/pyenv/issues/264) for details.
 
 
    - For **Zsh**:
@@ -408,7 +408,7 @@ easy to fork and contribute any changes back upstream.
    In MacOS, restarting terminal windows is enough (because MacOS runs shells
    in them as login shells by default).
 
-5. [**Install Python build dependencies**](https://github.com/pyenv/pyenv/wiki#suggested-build-environment) before attempting to install a new Python version.
+5. [**Install Python build dependencies**](https://github.com/spaweb/pyenv/wiki#suggested-build-environment) before attempting to install a new Python version.
 
 6. **Install Python versions into `$(pyenv root)/versions`.**
    For example, to download and install Python 2.7.8, run:
@@ -423,7 +423,7 @@ easy to fork and contribute any changes back upstream.
 
    **NOTE:** If you are having trouble installing a Python version,
    please visit the wiki page about
-   [Common Build Problems](https://github.com/pyenv/pyenv/wiki/Common-build-problems).
+   [Common Build Problems](https://github.com/spaweb/pyenv/wiki/Common-build-problems).
 
 
 #### Upgrading
@@ -573,7 +573,7 @@ You can affect how pyenv operates with the following settings:
 
 name | default | description
 -----|---------|------------
-`PYENV_VERSION` | | Specifies the Python version to be used.<br>Also see [`pyenv shell`](https://github.com/pyenv/pyenv/blob/master/COMMANDS.md#pyenv-shell)
+`PYENV_VERSION` | | Specifies the Python version to be used.<br>Also see [`pyenv shell`](https://github.com/spaweb/pyenv/blob/master/COMMANDS.md#pyenv-shell)
 `PYENV_ROOT` | `~/.pyenv` | Defines the directory under which Python versions and shims reside.<br>Also see `pyenv root`
 `PYENV_DEBUG` | | Outputs debug information.<br>Also as: `pyenv --debug <subcommand>`
 `PYENV_HOOK_PATH` | [_see wiki_][hooks] | Colon-separated list of paths searched for pyenv hooks.
@@ -585,7 +585,7 @@ name | default | description
 ## Development
 
 The pyenv source code is [hosted on
-GitHub](https://github.com/pyenv/pyenv).  It's clean, modular,
+GitHub](https://github.com/spaweb/pyenv).  It's clean, modular,
 and easy to understand, even if you're not a shell hacker.
 
 Tests are executed using [Bats](https://github.com/bats-core/bats-core):
@@ -594,11 +594,11 @@ Tests are executed using [Bats](https://github.com/bats-core/bats-core):
     bats/test/<file>.bats
 
 Please feel free to submit pull requests and file bugs on the [issue
-tracker](https://github.com/pyenv/pyenv/issues).
+tracker](https://github.com/spaweb/pyenv/issues).
 
 
-  [pyenv-virtualenv]: https://github.com/pyenv/pyenv-virtualenv#readme
-  [hooks]: https://github.com/pyenv/pyenv/wiki/Authoring-plugins#pyenv-hooks
+  [pyenv-virtualenv]: https://github.com/spaweb/pyenv-virtualenv#readme
+  [hooks]: https://github.com/spaweb/pyenv/wiki/Authoring-plugins#pyenv-hooks
 
 ### Version History
 
